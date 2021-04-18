@@ -1,5 +1,5 @@
 #!/bin/bash
 
-LAN=C
+LANG=C
 im-config -n fcitx
 

@@ -39,8 +39,7 @@ RUN apt-get install -y at-spi2-core bc curl wget dc          \
 # Japanese environment 
 RUN apt-get install -y language-pack-ja manpages-ja \
     fcitx fcitx-mozc fcitx-config-gtk \
-    nkf firefox-locale-ja im-config && update-locale LANG=ja_JP.UTF-8
-
+    nkf firefox-locale-ja im-config 
 
 
 ##### Lin4Neuro #####
@@ -140,6 +139,12 @@ ARG UID=1000
 RUN useradd -m -u ${UID} brain && echo "brain:lin4neuro" | chpasswd && adduser brain sudo
 
 USER brain
+
+ENV SHELL=/bin/bash
+ENV QT4_IM_MODULE=fcitx
+ENV QT_IM_MODULE=fcitx
+ENV XMODIFIERS=@im=fcitx
+ENV GTK_IM_MODULE=fcitx
 
 COPY vncsettings.sh /home/brain
 COPY jpsettings.sh /home/brain
