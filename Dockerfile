@@ -141,8 +141,6 @@ RUN useradd -m -u ${UID} brain && echo "brain:lin4neuro" | chpasswd && adduser b
 
 USER brain
 
-CMD LANG=C xdg-user-dirs-update --force
-CMD im-config -n fcitx
-
 COPY vncsettings.sh /home/brain
+COPY jpsettings.sh /home/brain
 
