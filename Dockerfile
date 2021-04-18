@@ -127,7 +127,7 @@ RUN cd /usr/local && wget http://www.lin4neuro.net/lin4neuro/neuroimaging_softwa
     echo 'export PATH=$PATH:/usr/local/Surf_Ice' >> /etc/skel/.bash_aliases
 
 # Change login shell to bash
-RUN chsh -s /bin/bash
+#RUN chsh -s /bin/bash
 ##### Lin4Neuro settings end #####
 
 
